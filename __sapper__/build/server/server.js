@@ -5486,11 +5486,9 @@ function noop$1() { }
 const { PORT, NODE_ENV } = process.env;
 const dev = NODE_ENV === "development";
 
-const url = dev ? "/" : "moskowitz-blog";
-
 polka__default['default']() // You can also use Express
   .use(
-    url,
+    "moskowitza-blog",
     compression__default['default']({ threshold: 0 }),
     sirv__default['default']("static", { dev }),
     middleware()
