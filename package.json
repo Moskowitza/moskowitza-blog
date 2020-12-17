@@ -1,6 +1,6 @@
 {
   "name": "moskowitza-blog",
-  "description": "moskowitza-blog",
+  "description": "sapper blog",
   "version": "0.0.1",
   "scripts": {
     "dev": "sapper dev",

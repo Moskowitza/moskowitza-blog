@@ -7,7 +7,7 @@ ghpages.publish(
         repo: 'https://github.com/moskowitza/moskowitza-blog.git',
         user: {
             name: 'moskowitza',
-            email: 'aaronmoskowitz@gmail.com'
+            email: 'moskowitzaaron@mac.com'
         }
     },
     () => {
