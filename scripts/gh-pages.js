@@ -4,10 +4,10 @@ ghpages.publish(
     '__sapper__/export/<your-app-name>',
     {
         branch: 'master',
-        repo: 'https://github.com/<your-github-username>/<your-repo-name>.git',
+        repo: 'https://github.com/moskowitza/moskowitza-blog.git',
         user: {
-            name: '<your-github-username>',
-            email: '<your-github-email>'
+            name: 'moskowitza',
+            email: 'aaronmoskowitz@gmail.com'
         }
     },
     () => {
