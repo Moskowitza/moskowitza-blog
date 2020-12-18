@@ -9,6 +9,39 @@
 
 const posts = [
 	{
+		title: 'Load images on exported site',
+		slug: 'loading-on-export',
+		html: `
+			<p>When I deployed the sapper template to github pages success kid did not show up. To solve this problem I looked at the src attribute of the image tag and saw <i>src="/client/_some-hash_.jpg"</i> I looked under the sources tag and saw the image was downloaded but the directory path was not correct in the markup. The src should be <i>src="/moskowitza-blog/client/_some-hash_.jpg"</i></p>
+			<p>From there I went mad googling solutions, re-read the previous blog posts and realized I was on my own. I had a sense I could chnage this path in the rollup config. This is the first time I'm using rollup instead of webpack (I could not get HMR working with webpack). Fortunately, the solution was straightforward.</p>
+
+			<ul>
+				<li>get your base path, in my case the name of the repo</li>
+				<li>find the 2 places in the rollup.config.js where we set publicpath property in the url() </li>
+				<li>Replace that path with a ternerary checking the envitorment</li>
+				<li>publicPath: dev ? '/client/' : '/<i>your-repo-name</i>/client/',</li>
+			</ul>
+
+			<p>The image now shows up when visiting the deployed site on GH pages and when I develop locally.</p>
+		`
+	},
+
+	{
+		title: 'Deploy Sapper to Github Pages',
+		slug: 'deploy-sapper-githubpages',
+		html: `
+			<p>I straight up followed <a href="https://gavinr.com/svelte-sapper-github-pages-actions/">this</a> tutorial. When setting the secret, I selected all options under repo.</p>
+			<p>I'm using github actions for a few reasons</p>
+			<ul>
+				<li>I want to learn more about Github actions to CI and CD </li>
+				<li>Each time I push code to master, deployment will be handled by the action. That's less work for me.</li>
+				<li>I don't want to rely on CircleCI or Jenkins</li>
+			</ul>
+			<p> I'd like to do a few more things with github actions, perhaps run cypress tests on the branch before I can merge.</p>
+		`
+	},
+
+	{
 		title: 'What is Sapper?',
 		slug: 'what-is-sapper',
 		html: `
